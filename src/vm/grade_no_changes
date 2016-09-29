@@ -1,0 +1,1713 @@
+TOTAL TESTING SCORE: 48.7%
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+SUMMARY BY TEST SET
+
+Test Set                                      Pts Max  % Ttl  % Max
+--------------------------------------------- --- --- ------ ------
+tests/vm/Rubric.functionality                   8/ 55   7.3%/ 50.0%
+tests/vm/Rubric.robustness                     12/ 28   6.4%/ 15.0%
+tests/userprog/Rubric.functionality           108/108  10.0%/ 10.0%
+tests/userprog/Rubric.robustness               88/ 88   5.0%/  5.0%
+tests/filesys/base/Rubric                      30/ 30  20.0%/ 20.0%
+--------------------------------------------- --- --- ------ ------
+Total                                                  48.7%/100.0%
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+SUMMARY OF INDIVIDUAL TESTS
+
+Functionality of virtual memory subsystem (tests/vm/Rubric.functionality):
+	- Test stack growth.
+	  ** 0/ 3 tests/vm/pt-grow-stack
+	  ** 0/ 3 tests/vm/pt-grow-stk-sc
+	  ** 0/ 3 tests/vm/pt-big-stk-obj
+	  ** 0/ 3 tests/vm/pt-grow-pusha
+
+	- Test paging behavior.
+	  ** 0/ 3 tests/vm/page-linear
+	     3/ 3 tests/vm/page-parallel
+	     3/ 3 tests/vm/page-shuffle
+	  ** 0/ 4 tests/vm/page-merge-seq
+	  ** 0/ 4 tests/vm/page-merge-par
+	  ** 0/ 4 tests/vm/page-merge-mm
+	  ** 0/ 4 tests/vm/page-merge-stk
+
+	- Test "mmap" system call.
+	  ** 0/ 2 tests/vm/mmap-read
+	  ** 0/ 2 tests/vm/mmap-write
+	  ** 0/ 2 tests/vm/mmap-shuffle
+
+	  ** 0/ 2 tests/vm/mmap-twice
+
+	     2/ 2 tests/vm/mmap-unmap
+	  ** 0/ 1 tests/vm/mmap-exit
+
+	  ** 0/ 3 tests/vm/mmap-clean
+
+	  ** 0/ 2 tests/vm/mmap-close
+	  ** 0/ 2 tests/vm/mmap-remove
+
+	- Section summary.
+	      3/ 20 tests passed
+	      8/ 55 points subtotal
+
+Robustness of virtual memory subsystem (tests/vm/Rubric.robustness):
+	- Test robustness of page table support.
+	     2/ 2 tests/vm/pt-bad-addr
+	     3/ 3 tests/vm/pt-bad-read
+	     2/ 2 tests/vm/pt-write-code
+	  ** 0/ 3 tests/vm/pt-write-code2
+	     4/ 4 tests/vm/pt-grow-bad
+
+	- Test robustness of "mmap" system call.
+	  ** 0/ 1 tests/vm/mmap-bad-fd
+	  ** 0/ 1 tests/vm/mmap-inherit
+	  ** 0/ 1 tests/vm/mmap-null
+	     1/ 1 tests/vm/mmap-zero
+
+	  ** 0/ 2 tests/vm/mmap-misalign
+
+	  ** 0/ 2 tests/vm/mmap-over-code
+	  ** 0/ 2 tests/vm/mmap-over-data
+	  ** 0/ 2 tests/vm/mmap-over-stk
+	  ** 0/ 2 tests/vm/mmap-overlap
+
+
+	- Section summary.
+	      5/ 14 tests passed
+	     12/ 28 points subtotal
+
+Functionality of system calls (tests/userprog/Rubric.functionality):
+	- Test argument passing on Pintos command line.
+	     3/ 3 tests/userprog/args-none
+	     3/ 3 tests/userprog/args-single
+	     3/ 3 tests/userprog/args-multiple
+	     3/ 3 tests/userprog/args-many
+	     3/ 3 tests/userprog/args-dbl-space
+
+	- Test "create" system call.
+	     3/ 3 tests/userprog/create-empty
+	     3/ 3 tests/userprog/create-long
+	     3/ 3 tests/userprog/create-normal
+	     3/ 3 tests/userprog/create-exists
+
+	- Test "open" system call.
+	     3/ 3 tests/userprog/open-missing
+	     3/ 3 tests/userprog/open-normal
+	     3/ 3 tests/userprog/open-twice
+
+	- Test "read" system call.
+	     3/ 3 tests/userprog/read-normal
+	     3/ 3 tests/userprog/read-zero
+
+	- Test "write" system call.
+	     3/ 3 tests/userprog/write-normal
+	     3/ 3 tests/userprog/write-zero
+
+	- Test "close" system call.
+	     3/ 3 tests/userprog/close-normal
+
+	- Test "exec" system call.
+	     5/ 5 tests/userprog/exec-once
+	     5/ 5 tests/userprog/exec-multiple
+	     5/ 5 tests/userprog/exec-arg
+
+	- Test "wait" system call.
+	     5/ 5 tests/userprog/wait-simple
+	     5/ 5 tests/userprog/wait-twice
+
+	- Test "exit" system call.
+	     5/ 5 tests/userprog/exit
+
+	- Test "halt" system call.
+	     3/ 3 tests/userprog/halt
+
+	- Test recursive execution of user programs.
+	    15/15 tests/userprog/multi-recurse
+
+	- Test read-only executable feature.
+	     3/ 3 tests/userprog/rox-simple
+	     3/ 3 tests/userprog/rox-child
+	     3/ 3 tests/userprog/rox-multichild
+
+	- Section summary.
+	     28/ 28 tests passed
+	    108/108 points subtotal
+
+Robustness of system calls (tests/userprog/Rubric.robustness):
+	- Test robustness of file descriptor handling.
+	     2/ 2 tests/userprog/close-stdin
+	     2/ 2 tests/userprog/close-stdout
+	     2/ 2 tests/userprog/close-bad-fd
+	     2/ 2 tests/userprog/close-twice
+	     2/ 2 tests/userprog/read-bad-fd
+	     2/ 2 tests/userprog/read-stdout
+	     2/ 2 tests/userprog/write-bad-fd
+	     2/ 2 tests/userprog/write-stdin
+	     2/ 2 tests/userprog/multi-child-fd
+
+	- Test robustness of pointer handling.
+	     3/ 3 tests/userprog/create-bad-ptr
+	     3/ 3 tests/userprog/exec-bad-ptr
+	     3/ 3 tests/userprog/open-bad-ptr
+	     3/ 3 tests/userprog/read-bad-ptr
+	     3/ 3 tests/userprog/write-bad-ptr
+
+	- Test robustness of buffer copying across page boundaries.
+	     3/ 3 tests/userprog/create-bound
+	     3/ 3 tests/userprog/open-boundary
+	     3/ 3 tests/userprog/read-boundary
+	     3/ 3 tests/userprog/write-boundary
+
+	- Test handling of null pointer and empty strings.
+	     2/ 2 tests/userprog/create-null
+	     2/ 2 tests/userprog/open-null
+	     2/ 2 tests/userprog/open-empty
+
+	- Test robustness of system call implementation.
+	     3/ 3 tests/userprog/sc-bad-arg
+	     3/ 3 tests/userprog/sc-bad-sp
+	     5/ 5 tests/userprog/sc-boundary
+	     5/ 5 tests/userprog/sc-boundary-2
+
+	- Test robustness of "exec" and "wait" system calls.
+	     5/ 5 tests/userprog/exec-missing
+	     5/ 5 tests/userprog/wait-bad-pid
+	     5/ 5 tests/userprog/wait-killed
+
+	- Test robustness of exception handling.
+	     1/ 1 tests/userprog/bad-read
+	     1/ 1 tests/userprog/bad-write
+	     1/ 1 tests/userprog/bad-jump
+	     1/ 1 tests/userprog/bad-read2
+	     1/ 1 tests/userprog/bad-write2
+	     1/ 1 tests/userprog/bad-jump2
+
+	- Section summary.
+	     34/ 34 tests passed
+	     88/ 88 points subtotal
+
+Functionality of base file system (tests/filesys/base/Rubric):
+	- Test basic support for small files.
+	     1/ 1 tests/filesys/base/sm-create
+	     2/ 2 tests/filesys/base/sm-full
+	     2/ 2 tests/filesys/base/sm-random
+	     2/ 2 tests/filesys/base/sm-seq-block
+	     3/ 3 tests/filesys/base/sm-seq-random
+
+	- Test basic support for large files.
+	     1/ 1 tests/filesys/base/lg-create
+	     2/ 2 tests/filesys/base/lg-full
+	     2/ 2 tests/filesys/base/lg-random
+	     2/ 2 tests/filesys/base/lg-seq-block
+	     3/ 3 tests/filesys/base/lg-seq-random
+
+	- Test synchronized multiprogram access to files.
+	     4/ 4 tests/filesys/base/syn-read
+	     4/ 4 tests/filesys/base/syn-write
+	     2/ 2 tests/filesys/base/syn-remove
+
+	- Section summary.
+	     13/ 13 tests passed
+	     30/ 30 points subtotal
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+DETAILS OF tests/vm/pt-grow-stack FAILURE:
+
+Test output failed to match any acceptable form.
+
+Acceptable output:
+  (pt-grow-stack) begin
+  (pt-grow-stack) cksum: 3424492700
+  (pt-grow-stack) end
+Differences in `diff -u' format:
+  (pt-grow-stack) begin
+- (pt-grow-stack) cksum: 3424492700
+- (pt-grow-stack) end
+
+(Process exit codes are excluded for matching purposes.)
+
+OUTPUT FROM tests/vm/pt-grow-stack:
+
+Copying tests/vm/pt-grow-stack to scratch partition...
+qemu -hda /tmp/yB5Mjx0mZX.dsk -m 4 -net none -nographic -monitor null --no-kvm
+PiLo hda1
+Loading...........
+Kernel command line: -q -f extract run pt-grow-stack
+Pintos booting with 4,088 kB RAM...
+382 pages available in kernel pool.
+382 pages available in user pool.
+RESULT: 1
+Calibrating timer...  523,468,800 loops/s.
+hda: 13,104 sectors (6 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 177 sectors (88 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 111 sectors (55 kB), Pintos scratch (22)
+hda4: 8,192 sectors (4 MB), Pintos swap (23)
+filesys: using hda2
+scratch: using hda3
+swap: using hda4
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'pt-grow-stack' into the file system...
+Erasing ustar archive...
+Executing 'pt-grow-stack':
+(pt-grow-stack) begin
+pt-grow-stack: exit(-1)
+Execution of 'pt-grow-stack' complete.
+Timer: 59 ticks
+Thread: 31 idle ticks, 28 kernel ticks, 0 user ticks
+hda2 (filesys): 61 reads, 226 writes
+hda3 (scratch): 110 reads, 2 writes
+hda4 (swap): 0 reads, 0 writes
+Console: 999 characters output
+Keyboard: 0 keys pressed
+Exception: 1 page faults
+Powering off...
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+DETAILS OF tests/vm/pt-grow-stk-sc FAILURE:
+
+Test output failed to match any acceptable form.
+
+Acceptable output:
+  (pt-grow-stk-sc) begin
+  (pt-grow-stk-sc) create "sample.txt"
+  (pt-grow-stk-sc) open "sample.txt"
+  (pt-grow-stk-sc) write "sample.txt"
+  (pt-grow-stk-sc) 2nd open "sample.txt"
+  (pt-grow-stk-sc) read "sample.txt"
+  (pt-grow-stk-sc) compare written data against read data
+  (pt-grow-stk-sc) end
+Differences in `diff -u' format:
+  (pt-grow-stk-sc) begin
+- (pt-grow-stk-sc) create "sample.txt"
+- (pt-grow-stk-sc) open "sample.txt"
+- (pt-grow-stk-sc) write "sample.txt"
+- (pt-grow-stk-sc) 2nd open "sample.txt"
+- (pt-grow-stk-sc) read "sample.txt"
+- (pt-grow-stk-sc) compare written data against read data
+- (pt-grow-stk-sc) end
+
+(Process exit codes are excluded for matching purposes.)
+
+OUTPUT FROM tests/vm/pt-grow-stk-sc:
+
+Copying tests/vm/pt-grow-stk-sc to scratch partition...
+qemu -hda /tmp/WkRDgJhxbu.dsk -m 4 -net none -nographic -monitor null --no-kvm
+PiLo hda1
+Loading...........
+Kernel command line: -q -f extract run pt-grow-stk-sc
+Pintos booting with 4,088 kB RAM...
+382 pages available in kernel pool.
+382 pages available in user pool.
+RESULT: 1
+Calibrating timer...  523,468,800 loops/s.
+hda: 13,104 sectors (6 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 177 sectors (88 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 106 sectors (53 kB), Pintos scratch (22)
+hda4: 8,192 sectors (4 MB), Pintos swap (23)
+filesys: using hda2
+scratch: using hda3
+swap: using hda4
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'pt-grow-stk-sc' into the file system...
+Erasing ustar archive...
+Executing 'pt-grow-stk-sc':
+(pt-grow-stk-sc) begin
+pt-grow-stk-sc: exit(-1)
+Execution of 'pt-grow-stk-sc' complete.
+Timer: 59 ticks
+Thread: 31 idle ticks, 28 kernel ticks, 0 user ticks
+hda2 (filesys): 67 reads, 216 writes
+hda3 (scratch): 105 reads, 2 writes
+hda4 (swap): 0 reads, 0 writes
+Console: 1005 characters output
+Keyboard: 0 keys pressed
+Exception: 1 page faults
+Powering off...
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+DETAILS OF tests/vm/pt-big-stk-obj FAILURE:
+
+Test output failed to match any acceptable form.
+
+Acceptable output:
+  (pt-big-stk-obj) begin
+  (pt-big-stk-obj) cksum: 3256410166
+  (pt-big-stk-obj) end
+Differences in `diff -u' format:
+  (pt-big-stk-obj) begin
+- (pt-big-stk-obj) cksum: 3256410166
+- (pt-big-stk-obj) end
+
+(Process exit codes are excluded for matching purposes.)
+
+OUTPUT FROM tests/vm/pt-big-stk-obj:
+
+Copying tests/vm/pt-big-stk-obj to scratch partition...
+qemu -hda /tmp/5iTf7WY9Ty.dsk -m 4 -net none -nographic -monitor null --no-kvm
+PiLo hda1
+Loading...........
+Kernel command line: -q -f extract run pt-big-stk-obj
+Pintos booting with 4,088 kB RAM...
+382 pages available in kernel pool.
+382 pages available in user pool.
+RESULT: 1
+Calibrating timer...  523,468,800 loops/s.
+hda: 13,104 sectors (6 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 177 sectors (88 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 111 sectors (55 kB), Pintos scratch (22)
+hda4: 8,192 sectors (4 MB), Pintos swap (23)
+filesys: using hda2
+scratch: using hda3
+swap: using hda4
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'pt-big-stk-obj' into the file system...
+Erasing ustar archive...
+Executing 'pt-big-stk-obj':
+(pt-big-stk-obj) begin
+pt-big-stk-obj: exit(-1)
+Execution of 'pt-big-stk-obj' complete.
+Timer: 58 ticks
+Thread: 31 idle ticks, 27 kernel ticks, 0 user ticks
+hda2 (filesys): 61 reads, 226 writes
+hda3 (scratch): 110 reads, 2 writes
+hda4 (swap): 0 reads, 0 writes
+Console: 1005 characters output
+Keyboard: 0 keys pressed
+Exception: 1 page faults
+Powering off...
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+DETAILS OF tests/vm/pt-grow-pusha FAILURE:
+
+Test output failed to match any acceptable form.
+
+Acceptable output:
+  (pt-grow-pusha) begin
+  (pt-grow-pusha) end
+Differences in `diff -u' format:
+  (pt-grow-pusha) begin
+- (pt-grow-pusha) end
+
+(Process exit codes are excluded for matching purposes.)
+
+OUTPUT FROM tests/vm/pt-grow-pusha:
+
+Copying tests/vm/pt-grow-pusha to scratch partition...
+qemu -hda /tmp/ZA7R3wuKWC.dsk -m 4 -net none -nographic -monitor null --no-kvm
+PiLo hda1
+Loading...........
+Kernel command line: -q -f extract run pt-grow-pusha
+Pintos booting with 4,088 kB RAM...
+382 pages available in kernel pool.
+382 pages available in user pool.
+RESULT: 1
+Calibrating timer...  523,468,800 loops/s.
+hda: 13,104 sectors (6 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 177 sectors (88 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 101 sectors (50 kB), Pintos scratch (22)
+hda4: 8,192 sectors (4 MB), Pintos swap (23)
+filesys: using hda2
+scratch: using hda3
+swap: using hda4
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'pt-grow-pusha' into the file system...
+Erasing ustar archive...
+Executing 'pt-grow-pusha':
+(pt-grow-pusha) begin
+pt-grow-pusha: exit(-1)
+Execution of 'pt-grow-pusha' complete.
+Timer: 57 ticks
+Thread: 30 idle ticks, 27 kernel ticks, 0 user ticks
+hda2 (filesys): 63 reads, 206 writes
+hda3 (scratch): 100 reads, 2 writes
+hda4 (swap): 0 reads, 0 writes
+Console: 999 characters output
+Keyboard: 0 keys pressed
+Exception: 1 page faults
+Powering off...
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+DETAILS OF tests/vm/page-linear FAILURE:
+
+Run didn't produce any output
+
+OUTPUT FROM tests/vm/page-linear:
+
+Copying tests/vm/page-linear to scratch partition...
+qemu -hda /tmp/SJZiOrfQTP.dsk -m 4 -net none -nographic -monitor null --no-kvm
+PiLo hda1
+Loading...........
+Kernel command line: -q -f extract run page-linear
+Pintos booting with 4,088 kB RAM...
+382 pages available in kernel pool.
+382 pages available in user pool.
+RESULT: 1
+Calibrating timer...  523,468,800 loops/s.
+hda: 13,104 sectors (6 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 177 sectors (88 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 108 sectors (54 kB), Pintos scratch (22)
+hda4: 8,192 sectors (4 MB), Pintos swap (23)
+filesys: using hda2
+scratch: using hda3
+swap: using hda4
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'page-linear' into the file system...
+Erasing ustar archive...
+Executing 'page-linear':
+Execution of 'page-linear' complete.
+Timer: 60 ticks
+Thread: 32 idle ticks, 27 kernel ticks, 1 user ticks
+hda2 (filesys): 64 reads, 220 writes
+hda3 (scratch): 107 reads, 2 writes
+hda4 (swap): 0 reads, 0 writes
+Console: 945 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+DETAILS OF tests/vm/page-merge-seq FAILURE:
+
+Run didn't produce any output
+
+OUTPUT FROM tests/vm/page-merge-seq:
+
+Copying tests/vm/page-merge-seq to scratch partition...
+Copying tests/vm/child-sort to scratch partition...
+qemu -hda /tmp/y3LtlfI_CP.dsk -m 4 -net none -nographic -monitor null --no-kvm
+PiLo hda1
+Loading...........
+Kernel command line: -q -f extract run page-merge-seq
+Pintos booting with 4,088 kB RAM...
+382 pages available in kernel pool.
+382 pages available in user pool.
+RESULT: 1
+Calibrating timer...  523,468,800 loops/s.
+hda: 13,104 sectors (6 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 177 sectors (88 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 212 sectors (106 kB), Pintos scratch (22)
+hda4: 8,192 sectors (4 MB), Pintos swap (23)
+filesys: using hda2
+scratch: using hda3
+swap: using hda4
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'page-merge-seq' into the file system...
+Putting 'child-sort' into the file system...
+Erasing ustar archive...
+Executing 'page-merge-seq':
+Execution of 'page-merge-seq' complete.
+Timer: 62 ticks
+Thread: 34 idle ticks, 27 kernel ticks, 1 user ticks
+hda2 (filesys): 91 reads, 430 writes
+hda3 (scratch): 211 reads, 2 writes
+hda4 (swap): 0 reads, 0 writes
+Console: 1003 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+DETAILS OF tests/vm/page-merge-par FAILURE:
+
+Run didn't produce any output
+
+OUTPUT FROM tests/vm/page-merge-par:
+
+Copying tests/vm/page-merge-par to scratch partition...
+Copying tests/vm/child-sort to scratch partition...
+qemu -hda /tmp/snVYsF8c5k.dsk -m 4 -net none -nographic -monitor null --no-kvm
+PiLo hda1
+Loading...........
+Kernel command line: -q -f extract run page-merge-par
+Pintos booting with 4,088 kB RAM...
+382 pages available in kernel pool.
+382 pages available in user pool.
+RESULT: 1
+Calibrating timer...  523,468,800 loops/s.
+hda: 13,104 sectors (6 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 177 sectors (88 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 215 sectors (107 kB), Pintos scratch (22)
+hda4: 8,192 sectors (4 MB), Pintos swap (23)
+filesys: using hda2
+scratch: using hda3
+swap: using hda4
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'page-merge-par' into the file system...
+Putting 'child-sort' into the file system...
+Erasing ustar archive...
+Executing 'page-merge-par':
+Execution of 'page-merge-par' complete.
+Timer: 62 ticks
+Thread: 33 idle ticks, 27 kernel ticks, 2 user ticks
+hda2 (filesys): 85 reads, 436 writes
+hda3 (scratch): 214 reads, 2 writes
+hda4 (swap): 0 reads, 0 writes
+Console: 1003 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+DETAILS OF tests/vm/page-merge-mm FAILURE:
+
+Run didn't produce any output
+
+OUTPUT FROM tests/vm/page-merge-mm:
+
+Copying tests/vm/page-merge-mm to scratch partition...
+Copying tests/vm/child-qsort-mm to scratch partition...
+qemu -hda /tmp/1Zv8vWLgQV.dsk -m 4 -net none -nographic -monitor null --no-kvm
+PiLo hda1
+Loading...........
+Kernel command line: -q -f extract run page-merge-mm
+Pintos booting with 4,088 kB RAM...
+382 pages available in kernel pool.
+382 pages available in user pool.
+RESULT: 1
+Calibrating timer...  523,468,800 loops/s.
+hda: 13,104 sectors (6 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 177 sectors (88 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 223 sectors (111 kB), Pintos scratch (22)
+hda4: 8,192 sectors (4 MB), Pintos swap (23)
+filesys: using hda2
+scratch: using hda3
+swap: using hda4
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'page-merge-mm' into the file system...
+Putting 'child-qsort-mm' into the file system...
+Erasing ustar archive...
+Executing 'page-merge-mm':
+Execution of 'page-merge-mm' complete.
+Timer: 62 ticks
+Thread: 30 idle ticks, 31 kernel ticks, 1 user ticks
+hda2 (filesys): 85 reads, 452 writes
+hda3 (scratch): 222 reads, 2 writes
+hda4 (swap): 0 reads, 0 writes
+Console: 1003 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+DETAILS OF tests/vm/page-merge-stk FAILURE:
+
+Run didn't produce any output
+
+OUTPUT FROM tests/vm/page-merge-stk:
+
+Copying tests/vm/page-merge-stk to scratch partition...
+Copying tests/vm/child-qsort to scratch partition...
+qemu -hda /tmp/jSCD8W0KhO.dsk -m 4 -net none -nographic -monitor null --no-kvm
+PiLo hda1
+Loading...........
+Kernel command line: -q -f extract run page-merge-stk
+Pintos booting with 4,088 kB RAM...
+382 pages available in kernel pool.
+382 pages available in user pool.
+RESULT: 1
+Calibrating timer...  523,468,800 loops/s.
+hda: 13,104 sectors (6 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 177 sectors (88 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 223 sectors (111 kB), Pintos scratch (22)
+hda4: 8,192 sectors (4 MB), Pintos swap (23)
+filesys: using hda2
+scratch: using hda3
+swap: using hda4
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'page-merge-stk' into the file system...
+Putting 'child-qsort' into the file system...
+Erasing ustar archive...
+Executing 'page-merge-stk':
+Execution of 'page-merge-stk' complete.
+Timer: 62 ticks
+Thread: 30 idle ticks, 30 kernel ticks, 2 user ticks
+hda2 (filesys): 85 reads, 452 writes
+hda3 (scratch): 222 reads, 2 writes
+hda4 (swap): 0 reads, 0 writes
+Console: 1004 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+DETAILS OF tests/vm/mmap-read FAILURE:
+
+Test output failed to match any acceptable form.
+
+Acceptable output:
+  (mmap-read) begin
+  (mmap-read) open "sample.txt"
+  (mmap-read) mmap "sample.txt"
+  (mmap-read) end
+Differences in `diff -u' format:
+  (mmap-read) begin
+  (mmap-read) open "sample.txt"
+  (mmap-read) mmap "sample.txt"
+- (mmap-read) end
+
+(Process exit codes are excluded for matching purposes.)
+
+OUTPUT FROM tests/vm/mmap-read:
+
+Copying tests/vm/mmap-read to scratch partition...
+Copying ../../tests/vm/sample.txt to scratch partition...
+qemu -hda /tmp/umQDOTJWbl.dsk -m 4 -net none -nographic -monitor null --no-kvm
+PiLo hda1
+Loading...........
+Kernel command line: -q -f extract run mmap-read
+Pintos booting with 4,088 kB RAM...
+382 pages available in kernel pool.
+382 pages available in user pool.
+RESULT: 1
+Calibrating timer...  523,468,800 loops/s.
+hda: 13,104 sectors (6 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 177 sectors (88 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 108 sectors (54 kB), Pintos scratch (22)
+hda4: 8,192 sectors (4 MB), Pintos swap (23)
+filesys: using hda2
+scratch: using hda3
+swap: using hda4
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'mmap-read' into the file system...
+Putting 'sample.txt' into the file system...
+Erasing ustar archive...
+Executing 'mmap-read':
+(mmap-read) begin
+(mmap-read) open "sample.txt"
+(mmap-read) mmap "sample.txt"
+mmap-read: exit(-1)
+Execution of 'mmap-read' complete.
+Timer: 60 ticks
+Thread: 32 idle ticks, 28 kernel ticks, 0 user ticks
+hda2 (filesys): 95 reads, 222 writes
+hda3 (scratch): 107 reads, 2 writes
+hda4 (swap): 0 reads, 0 writes
+Console: 1080 characters output
+Keyboard: 0 keys pressed
+Exception: 1 page faults
+Powering off...
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+DETAILS OF tests/vm/mmap-write FAILURE:
+
+Test output failed to match any acceptable form.
+
+Acceptable output:
+  (mmap-write) begin
+  (mmap-write) create "sample.txt"
+  (mmap-write) open "sample.txt"
+  (mmap-write) mmap "sample.txt"
+  (mmap-write) compare read data against written data
+  (mmap-write) end
+Differences in `diff -u' format:
+  (mmap-write) begin
+  (mmap-write) create "sample.txt"
+  (mmap-write) open "sample.txt"
+  (mmap-write) mmap "sample.txt"
+- (mmap-write) compare read data against written data
+- (mmap-write) end
+
+(Process exit codes are excluded for matching purposes.)
+
+OUTPUT FROM tests/vm/mmap-write:
+
+Copying tests/vm/mmap-write to scratch partition...
+qemu -hda /tmp/xSZgr6KmWD.dsk -m 4 -net none -nographic -monitor null --no-kvm
+PiLo hda1
+Loading...........
+Kernel command line: -q -f extract run mmap-write
+Pintos booting with 4,088 kB RAM...
+382 pages available in kernel pool.
+382 pages available in user pool.
+RESULT: 1
+Calibrating timer...  523,468,800 loops/s.
+hda: 13,104 sectors (6 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 177 sectors (88 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 106 sectors (53 kB), Pintos scratch (22)
+hda4: 8,192 sectors (4 MB), Pintos swap (23)
+filesys: using hda2
+scratch: using hda3
+swap: using hda4
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'mmap-write' into the file system...
+Erasing ustar archive...
+Executing 'mmap-write':
+(mmap-write) begin
+(mmap-write) create "sample.txt"
+(mmap-write) open "sample.txt"
+(mmap-write) mmap "sample.txt"
+mmap-write: exit(-1)
+Execution of 'mmap-write' complete.
+Timer: 60 ticks
+Thread: 30 idle ticks, 29 kernel ticks, 1 user ticks
+hda2 (filesys): 90 reads, 222 writes
+hda3 (scratch): 105 reads, 2 writes
+hda4 (swap): 0 reads, 0 writes
+Console: 1076 characters output
+Keyboard: 0 keys pressed
+Exception: 1 page faults
+Powering off...
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+DETAILS OF tests/vm/mmap-shuffle FAILURE:
+
+Test output failed to match any acceptable form.
+
+Acceptable output:
+  (mmap-shuffle) begin
+  (mmap-shuffle) create "buffer"
+  (mmap-shuffle) open "buffer"
+  (mmap-shuffle) mmap "buffer"
+  (mmap-shuffle) init: cksum=3115322833
+  (mmap-shuffle) shuffle 0: cksum=1691062564
+  (mmap-shuffle) shuffle 1: cksum=1973575879
+  (mmap-shuffle) shuffle 2: cksum=1647619479
+  (mmap-shuffle) shuffle 3: cksum=96566261
+  (mmap-shuffle) shuffle 4: cksum=3885786467
+  (mmap-shuffle) shuffle 5: cksum=3022003332
+  (mmap-shuffle) shuffle 6: cksum=3614934266
+  (mmap-shuffle) shuffle 7: cksum=2704001777
+  (mmap-shuffle) shuffle 8: cksum=735775156
+  (mmap-shuffle) shuffle 9: cksum=1864109763
+  (mmap-shuffle) end
+Differences in `diff -u' format:
+  (mmap-shuffle) begin
+  (mmap-shuffle) create "buffer"
+  (mmap-shuffle) open "buffer"
+  (mmap-shuffle) mmap "buffer"
+- (mmap-shuffle) init: cksum=3115322833
+- (mmap-shuffle) shuffle 0: cksum=1691062564
+- (mmap-shuffle) shuffle 1: cksum=1973575879
+- (mmap-shuffle) shuffle 2: cksum=1647619479
+- (mmap-shuffle) shuffle 3: cksum=96566261
+- (mmap-shuffle) shuffle 4: cksum=3885786467
+- (mmap-shuffle) shuffle 5: cksum=3022003332
+- (mmap-shuffle) shuffle 6: cksum=3614934266
+- (mmap-shuffle) shuffle 7: cksum=2704001777
+- (mmap-shuffle) shuffle 8: cksum=735775156
+- (mmap-shuffle) shuffle 9: cksum=1864109763
+- (mmap-shuffle) end
+
+(Process exit codes are excluded for matching purposes.)
+
+OUTPUT FROM tests/vm/mmap-shuffle:
+
+Copying tests/vm/mmap-shuffle to scratch partition...
+qemu -hda /tmp/oyuuckB4Ks.dsk -m 4 -net none -nographic -monitor null --no-kvm
+PiLo hda1
+Loading...........
+Kernel command line: -q -f extract run mmap-shuffle
+Pintos booting with 4,088 kB RAM...
+382 pages available in kernel pool.
+382 pages available in user pool.
+RESULT: 1
+Calibrating timer...  523,468,800 loops/s.
+hda: 13,104 sectors (6 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 177 sectors (88 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 112 sectors (56 kB), Pintos scratch (22)
+hda4: 8,192 sectors (4 MB), Pintos swap (23)
+filesys: using hda2
+scratch: using hda3
+swap: using hda4
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'mmap-shuffle' into the file system...
+Erasing ustar archive...
+Executing 'mmap-shuffle':
+(mmap-shuffle) begin
+(mmap-shuffle) create "buffer"
+(mmap-shuffle) open "buffer"
+(mmap-shuffle) mmap "buffer"
+mmap-shuffle: exit(-1)
+Execution of 'mmap-shuffle' complete.
+Timer: 62 ticks
+Thread: 33 idle ticks, 27 kernel ticks, 2 user ticks
+hda2 (filesys): 87 reads, 488 writes
+hda3 (scratch): 111 reads, 2 writes
+hda4 (swap): 0 reads, 0 writes
+Console: 1082 characters output
+Keyboard: 0 keys pressed
+Exception: 1 page faults
+Powering off...
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+DETAILS OF tests/vm/mmap-twice FAILURE:
+
+Test output failed to match any acceptable form.
+
+Acceptable output:
+  (mmap-twice) begin
+  (mmap-twice) open "sample.txt" #0
+  (mmap-twice) mmap "sample.txt" #0 at 0x10000000
+  (mmap-twice) open "sample.txt" #1
+  (mmap-twice) mmap "sample.txt" #1 at 0x20000000
+  (mmap-twice) compare mmap'd file 0 against data
+  (mmap-twice) compare mmap'd file 1 against data
+  (mmap-twice) end
+Differences in `diff -u' format:
+  (mmap-twice) begin
+  (mmap-twice) open "sample.txt" #0
+  (mmap-twice) mmap "sample.txt" #0 at 0x10000000
+  (mmap-twice) open "sample.txt" #1
+  (mmap-twice) mmap "sample.txt" #1 at 0x20000000
+  (mmap-twice) compare mmap'd file 0 against data
+- (mmap-twice) compare mmap'd file 1 against data
+- (mmap-twice) end
+
+(Process exit codes are excluded for matching purposes.)
+
+OUTPUT FROM tests/vm/mmap-twice:
+
+Copying tests/vm/mmap-twice to scratch partition...
+Copying ../../tests/vm/sample.txt to scratch partition...
+qemu -hda /tmp/Qzjdb3yxeX.dsk -m 4 -net none -nographic -monitor null --no-kvm
+PiLo hda1
+Loading...........
+Kernel command line: -q -f extract run mmap-twice
+Pintos booting with 4,088 kB RAM...
+382 pages available in kernel pool.
+382 pages available in user pool.
+RESULT: 1
+Calibrating timer...  523,468,800 loops/s.
+hda: 13,104 sectors (6 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 177 sectors (88 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 108 sectors (54 kB), Pintos scratch (22)
+hda4: 8,192 sectors (4 MB), Pintos swap (23)
+filesys: using hda2
+scratch: using hda3
+swap: using hda4
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'mmap-twice' into the file system...
+Putting 'sample.txt' into the file system...
+Erasing ustar archive...
+Executing 'mmap-twice':
+(mmap-twice) begin
+(mmap-twice) open "sample.txt" #0
+(mmap-twice) mmap "sample.txt" #0 at 0x10000000
+(mmap-twice) open "sample.txt" #1
+(mmap-twice) mmap "sample.txt" #1 at 0x20000000
+(mmap-twice) compare mmap'd file 0 against data
+mmap-twice: exit(-1)
+Execution of 'mmap-twice' complete.
+Timer: 61 ticks
+Thread: 31 idle ticks, 29 kernel ticks, 1 user ticks
+hda2 (filesys): 98 reads, 222 writes
+hda3 (scratch): 107 reads, 2 writes
+hda4 (swap): 0 reads, 0 writes
+Console: 1238 characters output
+Keyboard: 0 keys pressed
+Exception: 1 page faults
+Powering off...
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+DETAILS OF tests/vm/mmap-exit FAILURE:
+
+run: wait for child (should return 0): FAILED
+
+OUTPUT FROM tests/vm/mmap-exit:
+
+Copying tests/vm/mmap-exit to scratch partition...
+Copying tests/vm/child-mm-wrt to scratch partition...
+qemu -hda /tmp/x06TtBl6I1.dsk -m 4 -net none -nographic -monitor null --no-kvm
+PiLo hda1
+Loading...........
+Kernel command line: -q -f extract run mmap-exit
+Pintos booting with 4,088 kB RAM...
+382 pages available in kernel pool.
+382 pages available in user pool.
+RESULT: 1
+Calibrating timer...  523,468,800 loops/s.
+hda: 13,104 sectors (6 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 177 sectors (88 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 206 sectors (103 kB), Pintos scratch (22)
+hda4: 8,192 sectors (4 MB), Pintos swap (23)
+filesys: using hda2
+scratch: using hda3
+swap: using hda4
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'mmap-exit' into the file system...
+Putting 'child-mm-wrt' into the file system...
+Erasing ustar archive...
+Executing 'mmap-exit':
+(mmap-exit) begin
+(child-mm-wrt) begin
+(child-mm-wrt) create "sample.txt"
+(child-mm-wrt) open "sample.txt"
+(child-mm-wrt) mmap "sample.txt"
+child-mm-wrt: exit(-1)
+(mmap-exit) wait for child (should return 0): FAILED
+mmap-exit: exit(1)
+Execution of 'mmap-exit' complete.
+Timer: 62 ticks
+Thread: 33 idle ticks, 28 kernel ticks, 1 user ticks
+hda2 (filesys): 157 reads, 424 writes
+hda3 (scratch): 205 reads, 2 writes
+hda4 (swap): 0 reads, 0 writes
+Console: 1221 characters output
+Keyboard: 0 keys pressed
+Exception: 1 page faults
+Powering off...
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+DETAILS OF tests/vm/mmap-clean FAILURE:
+
+Test output failed to match any acceptable form.
+
+Acceptable output:
+  (mmap-clean) begin
+  (mmap-clean) open "sample.txt"
+  (mmap-clean) mmap "sample.txt"
+  (mmap-clean) write "sample.txt"
+  (mmap-clean) munmap "sample.txt"
+  (mmap-clean) seek "sample.txt"
+  (mmap-clean) read "sample.txt"
+  (mmap-clean) file change was retained after munmap
+  (mmap-clean) end
+Differences in `diff -u' format:
+  (mmap-clean) begin
+  (mmap-clean) open "sample.txt"
+  (mmap-clean) mmap "sample.txt"
+- (mmap-clean) write "sample.txt"
+- (mmap-clean) munmap "sample.txt"
+- (mmap-clean) seek "sample.txt"
+- (mmap-clean) read "sample.txt"
+- (mmap-clean) file change was retained after munmap
+- (mmap-clean) end
+
+(Process exit codes are excluded for matching purposes.)
+
+OUTPUT FROM tests/vm/mmap-clean:
+
+Copying tests/vm/mmap-clean to scratch partition...
+Copying ../../tests/vm/sample.txt to scratch partition...
+qemu -hda /tmp/Ldm3fzQmhM.dsk -m 4 -net none -nographic -monitor null --no-kvm
+PiLo hda1
+Loading...........
+Kernel command line: -q -f extract run mmap-clean
+Pintos booting with 4,088 kB RAM...
+382 pages available in kernel pool.
+382 pages available in user pool.
+RESULT: 1
+Calibrating timer...  523,468,800 loops/s.
+hda: 13,104 sectors (6 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 177 sectors (88 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 111 sectors (55 kB), Pintos scratch (22)
+hda4: 8,192 sectors (4 MB), Pintos swap (23)
+filesys: using hda2
+scratch: using hda3
+swap: using hda4
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'mmap-clean' into the file system...
+Putting 'sample.txt' into the file system...
+Erasing ustar archive...
+Executing 'mmap-clean':
+(mmap-clean) begin
+(mmap-clean) open "sample.txt"
+(mmap-clean) mmap "sample.txt"
+mmap-clean: exit(-1)
+Execution of 'mmap-clean' complete.
+Timer: 60 ticks
+Thread: 32 idle ticks, 27 kernel ticks, 1 user ticks
+hda2 (filesys): 97 reads, 228 writes
+hda3 (scratch): 110 reads, 2 writes
+hda4 (swap): 0 reads, 0 writes
+Console: 1088 characters output
+Keyboard: 0 keys pressed
+Exception: 1 page faults
+Powering off...
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+DETAILS OF tests/vm/mmap-close FAILURE:
+
+Test output failed to match any acceptable form.
+
+Acceptable output:
+  (mmap-close) begin
+  (mmap-close) open "sample.txt"
+  (mmap-close) mmap "sample.txt"
+  (mmap-close) end
+Differences in `diff -u' format:
+  (mmap-close) begin
+  (mmap-close) open "sample.txt"
+  (mmap-close) mmap "sample.txt"
+- (mmap-close) end
+
+(Process exit codes are excluded for matching purposes.)
+
+OUTPUT FROM tests/vm/mmap-close:
+
+Copying tests/vm/mmap-close to scratch partition...
+Copying ../../tests/vm/sample.txt to scratch partition...
+qemu -hda /tmp/TWrxRw99t_.dsk -m 4 -net none -nographic -monitor null --no-kvm
+PiLo hda1
+Loading...........
+Kernel command line: -q -f extract run mmap-close
+Pintos booting with 4,088 kB RAM...
+382 pages available in kernel pool.
+382 pages available in user pool.
+RESULT: 1
+Calibrating timer...  523,468,800 loops/s.
+hda: 13,104 sectors (6 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 177 sectors (88 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 108 sectors (54 kB), Pintos scratch (22)
+hda4: 8,192 sectors (4 MB), Pintos swap (23)
+filesys: using hda2
+scratch: using hda3
+swap: using hda4
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'mmap-close' into the file system...
+Putting 'sample.txt' into the file system...
+Erasing ustar archive...
+Executing 'mmap-close':
+(mmap-close) begin
+(mmap-close) open "sample.txt"
+(mmap-close) mmap "sample.txt"
+mmap-close: exit(-1)
+Execution of 'mmap-close' complete.
+Timer: 59 ticks
+Thread: 31 idle ticks, 27 kernel ticks, 1 user ticks
+hda2 (filesys): 95 reads, 222 writes
+hda3 (scratch): 107 reads, 2 writes
+hda4 (swap): 0 reads, 0 writes
+Console: 1088 characters output
+Keyboard: 0 keys pressed
+Exception: 1 page faults
+Powering off...
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+DETAILS OF tests/vm/mmap-remove FAILURE:
+
+Test output failed to match any acceptable form.
+
+Acceptable output:
+  (mmap-remove) begin
+  (mmap-remove) open "sample.txt"
+  (mmap-remove) mmap "sample.txt"
+  (mmap-remove) remove "sample.txt"
+  (mmap-remove) try to open "sample.txt"
+  (mmap-remove) create "another"
+  (mmap-remove) end
+Differences in `diff -u' format:
+  (mmap-remove) begin
+  (mmap-remove) open "sample.txt"
+  (mmap-remove) mmap "sample.txt"
+  (mmap-remove) remove "sample.txt"
+  (mmap-remove) try to open "sample.txt"
+  (mmap-remove) create "another"
+- (mmap-remove) end
+
+(Process exit codes are excluded for matching purposes.)
+
+OUTPUT FROM tests/vm/mmap-remove:
+
+Copying tests/vm/mmap-remove to scratch partition...
+Copying ../../tests/vm/sample.txt to scratch partition...
+qemu -hda /tmp/HRLZH43QSJ.dsk -m 4 -net none -nographic -monitor null --no-kvm
+PiLo hda1
+Loading...........
+Kernel command line: -q -f extract run mmap-remove
+Pintos booting with 4,088 kB RAM...
+382 pages available in kernel pool.
+382 pages available in user pool.
+RESULT: 1
+Calibrating timer...  523,468,800 loops/s.
+hda: 13,104 sectors (6 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 177 sectors (88 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 109 sectors (54 kB), Pintos scratch (22)
+hda4: 8,192 sectors (4 MB), Pintos swap (23)
+filesys: using hda2
+scratch: using hda3
+swap: using hda4
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'mmap-remove' into the file system...
+Putting 'sample.txt' into the file system...
+Erasing ustar archive...
+Executing 'mmap-remove':
+(mmap-remove) begin
+(mmap-remove) open "sample.txt"
+(mmap-remove) mmap "sample.txt"
+(mmap-remove) remove "sample.txt"
+(mmap-remove) try to open "sample.txt"
+(mmap-remove) create "another"
+mmap-remove: exit(-1)
+Execution of 'mmap-remove' complete.
+Timer: 62 ticks
+Thread: 31 idle ticks, 30 kernel ticks, 1 user ticks
+hda2 (filesys): 138 reads, 311 writes
+hda3 (scratch): 108 reads, 2 writes
+hda4 (swap): 0 reads, 0 writes
+Console: 1201 characters output
+Keyboard: 0 keys pressed
+Exception: 1 page faults
+Powering off...
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+DETAILS OF tests/vm/pt-write-code2 FAILURE:
+
+Kernel panic in run: PANIC at ../../threads/synch.c:197 in lock_acquire(): assertion `!lock_held_by_current_thread (lock)' failed.
+Call stack: 0xc002843c 0xc0022aed 0xc002bd47 0xc002b89c 0xc0021967 0xc0021b6f 0xc00273bd 0xc002d510 0xc002ca07 0xc002c181 0xc002c268 0xc002c2eb 0xc0021967 0xc0021b6f 0x804a1a7 0x80480e7 0x80486d6 0x8048701
+Translation of call stack:
+In kernel.o:
+0xc002843c: debug_panic (.../../lib/kernel/debug.c:38)
+0xc0022aed: lock_acquire (...../../threads/synch.c:199)
+0xc002bd47: sys_exit (...../userprog/syscall.c:279)
+0xc002b89c: page_fault (.../userprog/exception.c:158)
+0xc0021967: intr_handler (..../threads/interrupt.c:367)
+0xc0021b6f: intr_entry (threads/intr-stubs.S:38)
+0xc00273bd: memcpy (...ild/../../lib/string.c:16)
+0xc002d510: inode_read_at (...../../filesys/inode.c:243)
+0xc002ca07: file_read (...d/../../filesys/file.c:72)
+0xc002c181: sys_read (...../userprog/syscall.c:566)
+0xc002c268: syscall_arg3 (...../userprog/syscall.c:258)
+0xc002c2eb: syscall_handler (...../userprog/syscall.c:102)
+0xc0021967: intr_handler (..../threads/interrupt.c:367)
+0xc0021b6f: intr_entry (threads/intr-stubs.S:38)
+In tests/vm/pt-write-code2:
+0x0804a1a7: read (...../lib/user/syscall.c:117)
+0x080480e7: test_main (...s/vm/pt-write-code-2.c:14)
+0x080486d6: main (...ild/../../tests/main.c:13)
+0x08048701: _start (.../../../lib/user/entry.c:9)
+Translations of user virtual addresses above are based on a guess at
+the binary to use.  If this guess is incorrect, then those
+translations will be misleading.
+
+OUTPUT FROM tests/vm/pt-write-code2:
+
+Copying tests/vm/pt-write-code2 to scratch partition...
+Copying ../../tests/vm/sample.txt to scratch partition...
+qemu -hda /tmp/cCPPqkRnwQ.dsk -m 4 -net none -nographic -monitor null --no-kvm
+PiLo hda1
+Loading...........
+Kernel command line: -q -f extract run pt-write-code2
+Pintos booting with 4,088 kB RAM...
+382 pages available in kernel pool.
+382 pages available in user pool.
+RESULT: 1
+Calibrating timer...  523,468,800 loops/s.
+hda: 13,104 sectors (6 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 177 sectors (88 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 105 sectors (52 kB), Pintos scratch (22)
+hda4: 8,192 sectors (4 MB), Pintos swap (23)
+filesys: using hda2
+scratch: using hda3
+swap: using hda4
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'pt-write-code2' into the file system...
+Putting 'sample.txt' into the file system...
+Erasing ustar archive...
+Executing 'pt-write-code2':
+(pt-write-code2) begin
+(pt-write-code2) open "sample.txt"
+Kernel PANIC at ../../threads/synch.c:197 in lock_acquire(): assertion `!lock_held_by_current_thread (lock)' failed.
+Call stack: 0xc002843c 0xc0022aed 0xc002bd47 0xc002b89c 0xc0021967 0xc0021b6f 0xc00273bd 0xc002d510 0xc002ca07 0xc002c181 0xc002c268 0xc002c2eb 0xc0021967 0xc0021b6f 0x804a1a7 0x80480e7 0x80486d6 0x8048701.
+The `backtrace' program can make call stacks useful.
+Read "Backtraces" in the "Debugging Tools" chapter
+of the Pintos documentation for more information.
+Timer: 58 ticks
+Thread: 30 idle ticks, 28 kernel ticks, 0 user ticks
+hda2 (filesys): 93 reads, 216 writes
+hda3 (scratch): 104 reads, 2 writes
+hda4 (swap): 0 reads, 0 writes
+Console: 1498 characters output
+Keyboard: 0 keys pressed
+Exception: 1 page faults
+Powering off...
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+DETAILS OF tests/vm/mmap-bad-fd FAILURE:
+
+run: try to mmap invalid fd: FAILED
+
+OUTPUT FROM tests/vm/mmap-bad-fd:
+
+Copying tests/vm/mmap-bad-fd to scratch partition...
+qemu -hda /tmp/uDZIdebsd6.dsk -m 4 -net none -nographic -monitor null --no-kvm
+PiLo hda1
+Loading...........
+Kernel command line: -q -f extract run mmap-bad-fd
+Pintos booting with 4,088 kB RAM...
+382 pages available in kernel pool.
+382 pages available in user pool.
+RESULT: 1
+Calibrating timer...  523,468,800 loops/s.
+hda: 13,104 sectors (6 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 177 sectors (88 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 101 sectors (50 kB), Pintos scratch (22)
+hda4: 8,192 sectors (4 MB), Pintos swap (23)
+filesys: using hda2
+scratch: using hda3
+swap: using hda4
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'mmap-bad-fd' into the file system...
+Erasing ustar archive...
+Executing 'mmap-bad-fd':
+(mmap-bad-fd) begin
+(mmap-bad-fd) try to mmap invalid fd
+(mmap-bad-fd) try to mmap invalid fd: FAILED
+mmap-bad-fd: exit(1)
+Execution of 'mmap-bad-fd' complete.
+Timer: 58 ticks
+Thread: 30 idle ticks, 27 kernel ticks, 1 user ticks
+hda2 (filesys): 63 reads, 206 writes
+hda3 (scratch): 100 reads, 2 writes
+hda4 (swap): 0 reads, 0 writes
+Console: 1068 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+DETAILS OF tests/vm/mmap-inherit FAILURE:
+
+Test output failed to match any acceptable form.
+
+Acceptable output:
+  (mmap-inherit) begin
+  (mmap-inherit) open "sample.txt"
+  (mmap-inherit) mmap "sample.txt"
+  (mmap-inherit) exec "child-inherit"
+  (child-inherit) begin
+  child-inherit: exit(-1)
+  (mmap-inherit) checking that mmap'd file still has same data
+  (mmap-inherit) end
+  mmap-inherit: exit(0)
+Differences in `diff -u' format:
+  (mmap-inherit) begin
+  (mmap-inherit) open "sample.txt"
+  (mmap-inherit) mmap "sample.txt"
+- (mmap-inherit) exec "child-inherit"
+- (child-inherit) begin
+- child-inherit: exit(-1)
+- (mmap-inherit) checking that mmap'd file still has same data
+- (mmap-inherit) end
+- mmap-inherit: exit(0)
++ mmap-inherit: exit(-1)
+
+(User fault messages are excluded for matching purposes.)
+
+OUTPUT FROM tests/vm/mmap-inherit:
+
+Copying tests/vm/mmap-inherit to scratch partition...
+Copying ../../tests/vm/sample.txt to scratch partition...
+Copying tests/vm/child-inherit to scratch partition...
+qemu -hda /tmp/TS7cXegVaH.dsk -m 4 -net none -nographic -monitor null --no-kvm
+PiLo hda1
+Loading...........
+Kernel command line: -q -f extract run mmap-inherit
+Pintos booting with 4,088 kB RAM...
+382 pages available in kernel pool.
+382 pages available in user pool.
+RESULT: 1
+Calibrating timer...  523,468,800 loops/s.
+hda: 13,104 sectors (6 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 177 sectors (88 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 210 sectors (105 kB), Pintos scratch (22)
+hda4: 8,192 sectors (4 MB), Pintos swap (23)
+filesys: using hda2
+scratch: using hda3
+swap: using hda4
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'mmap-inherit' into the file system...
+Putting 'sample.txt' into the file system...
+Putting 'child-inherit' into the file system...
+Erasing ustar archive...
+Executing 'mmap-inherit':
+(mmap-inherit) begin
+(mmap-inherit) open "sample.txt"
+(mmap-inherit) mmap "sample.txt"
+mmap-inherit: exit(-1)
+Execution of 'mmap-inherit' complete.
+Timer: 61 ticks
+Thread: 33 idle ticks, 27 kernel ticks, 1 user ticks
+hda2 (filesys): 123 reads, 428 writes
+hda3 (scratch): 209 reads, 2 writes
+hda4 (swap): 0 reads, 0 writes
+Console: 1154 characters output
+Keyboard: 0 keys pressed
+Exception: 1 page faults
+Powering off...
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+DETAILS OF tests/vm/mmap-null FAILURE:
+
+run: try to mmap at address 0: FAILED
+
+OUTPUT FROM tests/vm/mmap-null:
+
+Copying tests/vm/mmap-null to scratch partition...
+Copying ../../tests/vm/sample.txt to scratch partition...
+qemu -hda /tmp/Eq7bw9grRC.dsk -m 4 -net none -nographic -monitor null --no-kvm
+PiLo hda1
+Loading...........
+Kernel command line: -q -f extract run mmap-null
+Pintos booting with 4,088 kB RAM...
+382 pages available in kernel pool.
+382 pages available in user pool.
+RESULT: 1
+Calibrating timer...  523,468,800 loops/s.
+hda: 13,104 sectors (6 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 177 sectors (88 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 105 sectors (52 kB), Pintos scratch (22)
+hda4: 8,192 sectors (4 MB), Pintos swap (23)
+filesys: using hda2
+scratch: using hda3
+swap: using hda4
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'mmap-null' into the file system...
+Putting 'sample.txt' into the file system...
+Erasing ustar archive...
+Executing 'mmap-null':
+(mmap-null) begin
+(mmap-null) open "sample.txt"
+(mmap-null) try to mmap at address 0
+(mmap-null) try to mmap at address 0: FAILED
+mmap-null: exit(1)
+Execution of 'mmap-null' complete.
+Timer: 59 ticks
+Thread: 31 idle ticks, 27 kernel ticks, 1 user ticks
+hda2 (filesys): 92 reads, 216 writes
+hda3 (scratch): 104 reads, 2 writes
+hda4 (swap): 0 reads, 0 writes
+Console: 1131 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+DETAILS OF tests/vm/mmap-misalign FAILURE:
+
+run: try to mmap at misaligned address: FAILED
+
+OUTPUT FROM tests/vm/mmap-misalign:
+
+Copying tests/vm/mmap-misalign to scratch partition...
+Copying ../../tests/vm/sample.txt to scratch partition...
+qemu -hda /tmp/eFDWhLZouS.dsk -m 4 -net none -nographic -monitor null --no-kvm
+PiLo hda1
+Loading...........
+Kernel command line: -q -f extract run mmap-misalign
+Pintos booting with 4,088 kB RAM...
+382 pages available in kernel pool.
+382 pages available in user pool.
+RESULT: 1
+Calibrating timer...  523,468,800 loops/s.
+hda: 13,104 sectors (6 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 177 sectors (88 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 105 sectors (52 kB), Pintos scratch (22)
+hda4: 8,192 sectors (4 MB), Pintos swap (23)
+filesys: using hda2
+scratch: using hda3
+swap: using hda4
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'mmap-misalign' into the file system...
+Putting 'sample.txt' into the file system...
+Erasing ustar archive...
+Executing 'mmap-misalign':
+(mmap-misalign) begin
+(mmap-misalign) open "sample.txt"
+(mmap-misalign) try to mmap at misaligned address
+(mmap-misalign) try to mmap at misaligned address: FAILED
+mmap-misalign: exit(1)
+Execution of 'mmap-misalign' complete.
+Timer: 59 ticks
+Thread: 31 idle ticks, 27 kernel ticks, 1 user ticks
+hda2 (filesys): 92 reads, 216 writes
+hda3 (scratch): 104 reads, 2 writes
+hda4 (swap): 0 reads, 0 writes
+Console: 1185 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+DETAILS OF tests/vm/mmap-over-code FAILURE:
+
+run: try to mmap over code segment: FAILED
+
+OUTPUT FROM tests/vm/mmap-over-code:
+
+Copying tests/vm/mmap-over-code to scratch partition...
+Copying ../../tests/vm/sample.txt to scratch partition...
+qemu -hda /tmp/8pA1xez5qr.dsk -m 4 -net none -nographic -monitor null --no-kvm
+PiLo hda1
+Loading...........
+Kernel command line: -q -f extract run mmap-over-code
+Pintos booting with 4,088 kB RAM...
+382 pages available in kernel pool.
+382 pages available in user pool.
+RESULT: 1
+Calibrating timer...  523,468,800 loops/s.
+hda: 13,104 sectors (6 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 177 sectors (88 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 105 sectors (52 kB), Pintos scratch (22)
+hda4: 8,192 sectors (4 MB), Pintos swap (23)
+filesys: using hda2
+scratch: using hda3
+swap: using hda4
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'mmap-over-code' into the file system...
+Putting 'sample.txt' into the file system...
+Erasing ustar archive...
+Executing 'mmap-over-code':
+(mmap-over-code) begin
+(mmap-over-code) open "sample.txt"
+(mmap-over-code) try to mmap over code segment
+(mmap-over-code) try to mmap over code segment: FAILED
+mmap-over-code: exit(1)
+Execution of 'mmap-over-code' complete.
+Timer: 61 ticks
+Thread: 31 idle ticks, 30 kernel ticks, 0 user ticks
+hda2 (filesys): 92 reads, 216 writes
+hda3 (scratch): 104 reads, 2 writes
+hda4 (swap): 0 reads, 0 writes
+Console: 1186 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+DETAILS OF tests/vm/mmap-over-data FAILURE:
+
+run: try to mmap over data segment: FAILED
+
+OUTPUT FROM tests/vm/mmap-over-data:
+
+Copying tests/vm/mmap-over-data to scratch partition...
+Copying ../../tests/vm/sample.txt to scratch partition...
+qemu -hda /tmp/Zon3ppCF_I.dsk -m 4 -net none -nographic -monitor null --no-kvm
+PiLo hda1
+Loading...........
+Kernel command line: -q -f extract run mmap-over-data
+Pintos booting with 4,088 kB RAM...
+382 pages available in kernel pool.
+382 pages available in user pool.
+RESULT: 1
+Calibrating timer...  523,468,800 loops/s.
+hda: 13,104 sectors (6 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 177 sectors (88 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 105 sectors (52 kB), Pintos scratch (22)
+hda4: 8,192 sectors (4 MB), Pintos swap (23)
+filesys: using hda2
+scratch: using hda3
+swap: using hda4
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'mmap-over-data' into the file system...
+Putting 'sample.txt' into the file system...
+Erasing ustar archive...
+Executing 'mmap-over-data':
+(mmap-over-data) begin
+(mmap-over-data) open "sample.txt"
+(mmap-over-data) try to mmap over data segment
+(mmap-over-data) try to mmap over data segment: FAILED
+mmap-over-data: exit(1)
+Execution of 'mmap-over-data' complete.
+Timer: 60 ticks
+Thread: 33 idle ticks, 26 kernel ticks, 1 user ticks
+hda2 (filesys): 92 reads, 216 writes
+hda3 (scratch): 104 reads, 2 writes
+hda4 (swap): 0 reads, 0 writes
+Console: 1186 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+DETAILS OF tests/vm/mmap-over-stk FAILURE:
+
+run: try to mmap over stack segment: FAILED
+
+OUTPUT FROM tests/vm/mmap-over-stk:
+
+Copying tests/vm/mmap-over-stk to scratch partition...
+Copying ../../tests/vm/sample.txt to scratch partition...
+qemu -hda /tmp/8y7qeJin47.dsk -m 4 -net none -nographic -monitor null --no-kvm
+PiLo hda1
+Loading...........
+Kernel command line: -q -f extract run mmap-over-stk
+Pintos booting with 4,088 kB RAM...
+382 pages available in kernel pool.
+382 pages available in user pool.
+RESULT: 1
+Calibrating timer...  523,468,800 loops/s.
+hda: 13,104 sectors (6 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 177 sectors (88 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 105 sectors (52 kB), Pintos scratch (22)
+hda4: 8,192 sectors (4 MB), Pintos swap (23)
+filesys: using hda2
+scratch: using hda3
+swap: using hda4
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'mmap-over-stk' into the file system...
+Putting 'sample.txt' into the file system...
+Erasing ustar archive...
+Executing 'mmap-over-stk':
+(mmap-over-stk) begin
+(mmap-over-stk) open "sample.txt"
+(mmap-over-stk) try to mmap over stack segment
+(mmap-over-stk) try to mmap over stack segment: FAILED
+mmap-over-stk: exit(1)
+Execution of 'mmap-over-stk' complete.
+Timer: 59 ticks
+Thread: 33 idle ticks, 25 kernel ticks, 1 user ticks
+hda2 (filesys): 92 reads, 216 writes
+hda3 (scratch): 104 reads, 2 writes
+hda4 (swap): 0 reads, 0 writes
+Console: 1179 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+DETAILS OF tests/vm/mmap-overlap FAILURE:
+
+run: try to mmap "zeros" again: FAILED
+
+OUTPUT FROM tests/vm/mmap-overlap:
+
+Copying tests/vm/mmap-overlap to scratch partition...
+Copying tests/vm/zeros to scratch partition...
+qemu -hda /tmp/QGGvI8bwX9.dsk -m 4 -net none -nographic -monitor null --no-kvm
+PiLo hda1
+Loading...........
+Kernel command line: -q -f extract run mmap-overlap
+Pintos booting with 4,088 kB RAM...
+382 pages available in kernel pool.
+382 pages available in user pool.
+RESULT: 1
+Calibrating timer...  523,468,800 loops/s.
+hda: 13,104 sectors (6 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 177 sectors (88 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 118 sectors (59 kB), Pintos scratch (22)
+hda4: 8,192 sectors (4 MB), Pintos swap (23)
+filesys: using hda2
+scratch: using hda3
+swap: using hda4
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'mmap-overlap' into the file system...
+Putting 'zeros' into the file system...
+Erasing ustar archive...
+Executing 'mmap-overlap':
+(mmap-overlap) begin
+(mmap-overlap) open "zeros" once
+(mmap-overlap) mmap "zeros"
+(mmap-overlap) open "zeros" again
+(mmap-overlap) try to mmap "zeros" again
+(mmap-overlap) try to mmap "zeros" again: FAILED
+mmap-overlap: exit(1)
+Execution of 'mmap-overlap' complete.
+Timer: 59 ticks
+Thread: 31 idle ticks, 27 kernel ticks, 1 user ticks
+hda2 (filesys): 97 reads, 242 writes
+hda3 (scratch): 117 reads, 2 writes
+hda4 (swap): 0 reads, 0 writes
+Console: 1217 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...

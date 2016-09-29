@@ -1,0 +1,41 @@
+TODO:
+  - Loading of executables: load pages on demand
+  - Stack Growth
+  - Memory-Mapped Files
+  - Page swapping 
+
+FILES TO CREATE 
+
+  - src/vm/frame.c    -> frame allocator + eviction
+  - src/vm/page.c     -> create page, load page, unload, find page, allocate memory and free, clear, etc. 
+  - src/vm/swap.c     -> frame/swap reclamation on exit + swapping 
+  - src/vm/mmap.c     -> memory mapped files: mapid_t mmap, munmap   
+
+SUMMARY OF HOW TO: 
+
+  Frame allocator, eviction, swapping:
+  - build frame table
+  - contains pointers to pages and other data
+  - record which process owns a frame
+  - obtain a FREE frame
+  - modify calls to palloc_get_page and palloc_free_page
+
+  Loading of executables: 
+  - executable must be loaded before it is run -SOL:  use supplemental page table
+  - data which may never be used is read into memory -SOL: load in segments on demand only	
+  Stack Allocation: 
+  - grow stack dynamically as page faults occur
+  - identify stack access by looking at the esp of struct intr_frame
+
+  Memory Mapped files: 
+  - map files into process address space - connect mapids to actual files (IDEA: use a table). 
+  -on page fault, load file data into page 
+  -when swapping, write file pages back to disk. (IDEA: share page because multiple processes can map a single file). 
+
+ 
+ORDER OF IMPLEMENTATION: 
+  1. FIX TASK 2 - (Mickey working on it atm, only few tests to fix). 
+  2. Create frame table , change process.c to use it //task 2 tests should still pass at this point 
+  3. Page table and page fault handler (loading of code and data segments), change process.c to record info in page table when loading an executable and setting up its stack. // should pass all of task 2 functionality test cases, only some of robustness. 
+  4. Implement stack growth, mapped files and page reclamation on process exit. // this can be done in parallel 
+  5. Implement eviction.   
